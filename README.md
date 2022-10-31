@@ -6,7 +6,8 @@ A ping tool availability check developed in Django
 * Run python manage.py runserver
 
 # Create Local Database & Import Data From CSV
-* ![image](https://user-images.githubusercontent.com/53460015/198984500-b62ca516-b37a-4b28-bdf6-0f12f729a490.png)
+![image](https://user-images.githubusercontent.com/53460015/198984500-b62ca516-b37a-4b28-bdf6-0f12f729a490.png)
+
 Import Data using HeidiSQL:
 ![image](https://user-images.githubusercontent.com/53460015/199002256-1b7a6f9b-22ae-4f68-a714-3c90de34a7c5.png)
 
