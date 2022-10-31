@@ -19,6 +19,7 @@ class DataTerminals(models.Model):
     terminal_5 = models.IntegerField(blank=True, null=True)
     switch_status = models.IntegerField(blank=True, null=True)
     timestamp = models.IntegerField(blank=True, null=True)
+    date = models.DateTimeField(blank=True, null=True)
 
     class Meta:
         managed = False
