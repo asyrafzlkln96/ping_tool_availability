@@ -13,7 +13,7 @@ Import Data using HeidiSQL:
 ![image](https://user-images.githubusercontent.com/53460015/199002256-1b7a6f9b-22ae-4f68-a714-3c90de34a7c5.png)
 
 Local Database Created (Table name: data_terminals)
-![image](https://user-images.githubusercontent.com/53460015/199062804-f659e952-fa83-446b-b307-3f733eb054fb.png)
+![image](https://user-images.githubusercontent.com/53460015/199062992-3eeacd2c-cb50-4981-aa07-ea5fc5690877.png)
 
 
 
