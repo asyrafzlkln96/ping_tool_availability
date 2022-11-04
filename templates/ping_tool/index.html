@@ -1,0 +1,49 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Switch Status: Alert Report</title>  
+     {% load static %}  
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <style>
+    .myTable { 
+    width: 100%;
+    text-align: left;
+    background-color: lemonchiffon;
+    border-collapse: collapse; 
+    }
+    .myTable th { 
+    background-color: goldenrod;
+    color: white; 
+    }
+    .myTable td, 
+    .myTable th { 
+    padding: 10px;
+    border: 1px solid goldenrod; 
+    }
+    </style>
+</head>  
+<body>
+</body>
+<h2> Alert Report </h2> 
+<table class="myTable">   
+    <tr>  
+        <th>Switch Name</th>  
+        <th>Switch Status</th> 
+        <th>Alert Type</th>  
+        <th>Alert Date/Time</th>  
+    </tr>    
+{% for alert_reports in alert_report %}  
+    <tr>  
+        <td>{{ alert_reports.switch }}</td>  
+        <td>{{ alert_reports.switch_status }}</td>
+        <td>{{ alert_reports.alert_type }}</td>
+        <td>{{ alert_reports.date }}</td>    
+    </tr>  
+{% endfor %}  
+    </tbody>  
+</table>  
+<br>  
+<br>  
+</body>  
+</html>  
