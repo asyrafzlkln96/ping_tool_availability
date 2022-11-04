@@ -3,11 +3,13 @@ from .models import DataTerminals
 from django.http import HttpResponse, HttpResponseNotFound, JsonResponse
 from rest_framework.response import Response
 from rest_framework import status
-from django.db.models import F, When, Case, Q
+from django.db.models import F, When, Case, Q, CharField, Value
 from datetime import datetime
 # import datetime
 import pandas as pd
 # import datetime as dt
+import matplotlib.pyplot as plt
+
 
 # Create your views here.
 
@@ -40,13 +42,14 @@ def convert_unix_timestamp_to_datetime(request):
     return HttpResponse('<h1>Timestamp updated!</h1>')
 
 def create_chart(request):
-    pass
+    df = pd.DataFrame(list(DataTerminals.objects.all().values('switch','switch_status','date')))
+    print('df is:', df)
+    return HttpResponse('<h1>Chart created!</h1>')
                     
 def create_alert_report(request):
     if request.method == 'GET':
         queryset = DataTerminals.objects.all().values('switch','switch_status','date')
         if queryset is not None:
-            queryset = queryset.filter(switch_status=0)
-            print('queryset:',queryset)
-            return HttpResponse('<h1>Alert report created!</h1>')
+            alert_report = queryset.filter(switch_status=0).annotate(alert_type=Value('Ping Lost',output_field=CharField()))
+            return render(request, 'ping_tool/index.html', {'alert_report': alert_report})
 
