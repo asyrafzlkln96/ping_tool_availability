@@ -1,9 +1,10 @@
 # ping_tool_availability
-A ping tool availability check developed in Django
+A ping tool availability check developed in Django framework
 
 # Usage
 * Run pip install -r requirements.txt to install Django and other dependencies.
 * Run python manage.py runserver
+* Refer to Django endpoints below for more info
 
 # Create Local Database & Import Data From CSV
 * Create column names and data types in HeidiSQL 
@@ -21,7 +22,7 @@ Alert Report Created:
 
 
 
-# Django Endpoints:
+# Django Endpoints (Browse to http://localhost:8000 and add below endpoint):
 * /update_switch_status : To update switch status as 0 when P1 to P5 are all zeros and as 1 for other records.
 * /update_timestamp: To bulk update convert unix timestamp to date in DB.
 * /create_chart : To create chart to represent switch statuses for 12 hours
