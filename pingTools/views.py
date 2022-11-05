@@ -32,7 +32,6 @@ def get_switch_status(request):
     if request.method == 'GET':
         queryset = DataTerminals.objects.all().values()
         if queryset is not None:
-            timestamp = queryset.values_list('timestamp', flat=True)
             # Update switch status to 0 if all P1-P5 is 0
             val1 = queryset.filter(terminal_1__exact=0).filter(terminal_2__exact=0).filter(terminal_3__exact=0).filter(terminal_4__exact=0).filter(terminal_5__exact=0).update(switch_status=0)
             # Update switch status to 1 for other records
