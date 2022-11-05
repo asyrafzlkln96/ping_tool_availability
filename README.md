@@ -6,6 +6,10 @@ A ping tool availability check developed in Django framework
 * Run python manage.py runserver
 * Refer to Django endpoints below for more info
 
+# Run Apache & MySQL in XAMPP Control Panel
+* For the sake of simplicity, I ran Apache & MySQL server from XAMPP for the local database
+![image](https://user-images.githubusercontent.com/53460015/200130628-cbd76f4d-eec1-4251-8a4e-2865b232109c.png)
+
 # Create Local Database & Import Data From CSV
 * Create column names and data types in HeidiSQL 
 ![image](https://user-images.githubusercontent.com/53460015/198984500-b62ca516-b37a-4b28-bdf6-0f12f729a490.png)
