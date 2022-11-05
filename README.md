@@ -1,5 +1,5 @@
 # ping_tool_availability
-A ping tool availability check developed in Django framework
+A ping tool availability check developed in Django framework.
 
 # Usage
 * Run pip install -r requirements.txt to install Django and other dependencies.
@@ -28,6 +28,7 @@ Sample Chart Created(Ping Availability for 12 hours):
 ![image](https://github.com/asyrafzlkln96/ping_tool_availability/blob/main/Switch%20SW-1%20Ping%20Availability%2028-11-2019%20(12%20am-12%20pm).png)
 
 # Django Endpoints (Browse to http://localhost:8000 and add below endpoint):
+* /pingtool : To list all information on all switches by querying to DB.
 * /update_switch_status : To update switch status as 0 when P1 to P5 are all zeros and as 1 for other records.
 * /update_timestamp: To bulk update convert unix timestamp to date in DB.
 * /create_chart : To create chart to represent switch statuses for 12 hours
