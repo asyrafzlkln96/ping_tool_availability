@@ -20,7 +20,8 @@ Alert Report Created:
 * Open browser and go to http://127.0.0.1:8000/report
 ![image](https://user-images.githubusercontent.com/53460015/200037944-8211a893-45f0-4e77-bdbc-766f069b0268.png)
 
-
+Sample Chart Created(Ping Availability for 12 hours):
+![image](https://github.com/asyrafzlkln96/ping_tool_availability/blob/main/Switch%20SW-1%20Ping%20Availability%2028-11-2019%20(12%20am-12%20pm).png)
 
 # Django Endpoints (Browse to http://localhost:8000 and add below endpoint):
 * /update_switch_status : To update switch status as 0 when P1 to P5 are all zeros and as 1 for other records.
