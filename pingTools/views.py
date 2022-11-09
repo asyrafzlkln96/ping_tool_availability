@@ -32,6 +32,7 @@ def get_switch_status(request):
     if request.method == 'GET':
         queryset = DataTerminals.objects.all().values()
         if queryset is not None:
+            timestamp = queryset.values_list('timestamp', flat=True)
             # Update switch status to 0 if all P1-P5 is 0
             val1 = queryset.filter(terminal_1__exact=0).filter(terminal_2__exact=0).filter(terminal_3__exact=0).filter(terminal_4__exact=0).filter(terminal_5__exact=0).update(switch_status=0)
             # Update switch status to 1 for other records
@@ -84,7 +85,7 @@ def create_chart(request):
     ax.set(xlabel="Time",
         ylabel="Switch Status",
         title="Switch SW-1 Ping Availability 28-11-2019 (12 am-12 pm)")
-    plt.savefig('Switch SW-1 Ping Availability 28-11-2019 (12 am-12 pm).png')
+    plt.savefig('static/media/template/Switch SW-1 Ping Availability 28-11-2019 (12 am-12 pm).png')
 
     fig2, ax2 = plt.subplots(figsize=(80, 10), dpi=80)
     # plt.xticks([0, 360])
@@ -101,7 +102,7 @@ def create_chart(request):
     ax2.set(xlabel="Time",
         ylabel="Switch Status",
         title="Switch SW-2 Ping Availability 28-11-2019 (12 am-12 pm)")
-    plt.savefig('Switch SW-2 Ping Availability 28-11-2019 (12 am-12 pm).png')
+    plt.savefig('static/media/template/Switch SW-2 Ping Availability 28-11-2019 (12 am-12 pm).png')
 
     fig3, ax3 = plt.subplots(figsize=(80, 10), dpi=80)
     # plt.xticks([0, 360])
@@ -118,8 +119,9 @@ def create_chart(request):
     ax3.set(xlabel="Time",
         ylabel="Switch Status",
         title="Switch SW-3 Ping Availability 28-11-2019 (12 am-12 pm)")
-    plt.savefig('Switch SW-3 Ping Availability 28-11-2019 (12 am-12 pm).png')
-    return HttpResponse('<h1>Chart created!</h1>')
+    plt.savefig('static/media/template/Switch SW-3 Ping Availability 28-11-2019 (12 am-12 pm).png')
+    # return HttpResponse('<h1>Chart created!</h1>')
+    return render(request, 'ping_tool/chart.html')
                     
 def create_alert_report(request):
     if request.method == 'GET':
